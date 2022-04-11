@@ -7,9 +7,9 @@ class DirectorsController < ApplicationController
   end
 
   def index
-    matching_directors = Director.all
+    @directors = Director.all
 
-    @list_of_directors = matching_directors.order( :created_at => :desc )
+    @list_of_directors = @directors.order( :created_at => :desc )
 
     
 

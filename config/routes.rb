@@ -22,6 +22,15 @@ Rails.application.routes.draw do
 
   #Routes for director resource:
   resource :directors
+  get "/directors/:id"=> "directors#show" , as: "director" #expects an arg to populate 
+  
+  # UPDATE
+  patch "/directors/:id" => "directors#update" 
+  get "/directors/:id/edit" => "directors#edit" , as: "edit_director" #expects an arg to populate 
+  
+  # DELETE
+  delete "/directors/:id"=> "directors#destroy" 
+  
 
   #------------------------------
 end

@@ -10,9 +10,14 @@ class MoviesController < ApplicationController
 
     @list_of_movies = matching_movies.order( :created_at => :desc )
 
+    @directors = Director.all
+
+    @list_of_directors = @directors.order( :created_at => :desc )
+
     respond_to do |format|
       format.json do
         render json: @list_of_movies
+        render json: @directors
       end
 
       format.html 
