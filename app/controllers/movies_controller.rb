@@ -30,8 +30,6 @@ class MoviesController < ApplicationController
 
     @movie = Movie.new(movie_attributes)
 
-
-    @movie = Movie.new
     @movie.title = params.fetch(:movie).fetch(:title)
     @movie.description = params.fetch(:movie).fetch(:description)
 
@@ -39,7 +37,7 @@ class MoviesController < ApplicationController
       @movie.save
       redirect_to movies_url,  notice: "Movie created successfully." 
     else
-      render template: "new"
+      render "new"
     end
   end
 
@@ -55,13 +53,10 @@ class MoviesController < ApplicationController
 
     @movie = Movie.new(movie_attributes)
 
-
-    @movie = Movie.new
     @movie.title = params.fetch(:movie).fetch(:title)
     @movie.description = params.fetch(:movie).fetch(:description)
 
-    if 
-      @movie.valid?
+    if @movie.valid?
       @movie.save
       redirect_to movie_url(@movie),  notice: "Movie updated successfully." 
     else
