@@ -76,7 +76,7 @@ class DirectorsController < ApplicationController
 
     director.destroy
 
-    redirect_to directors_url, notice:"Director deleted successfully." 
+    redirect_to movies_url, notice:"Director deleted successfully." 
   end
 
 

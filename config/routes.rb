@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get "/movies/:id/edit" => "movies#edit" , as: "edit_movie" #expects an arg to populate 
   
   # DELETE
-  delete "/movies/:id"=> "movies#destroy" 
+  delete "/movies/:id"=> "movies#destroy" , as: "delete_movie"
 
   #Routes for director resource:
   resource :directors
